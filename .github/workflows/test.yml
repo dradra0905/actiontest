@@ -1,0 +1,20 @@
+name: test
+
+on:
+  push:
+    branches: [gw]
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - name: SSH-TEST
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{secrets.HOST}}
+          username: ${{secrets.USER}}
+          password: ${{secrets.PW}}
+          port: ${{secrets.PORT}}
+
+          run: echo "hello ${{secrets.USER}}"
