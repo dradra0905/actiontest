@@ -1,0 +1,12 @@
+name: test1
+
+on:
+  push:
+    branches: [gw]
+
+jobs:
+  build:
+    runs-on: ubuntu-18.04
+
+    steps:
+      - run: echo "hello ${{secrets.USER}}"
