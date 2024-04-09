@@ -9,4 +9,4 @@ jobs:
     runs-on: ubuntu-18.04
 
     steps:
-      - run: echo "hello ${{secrets.USER}}"
+      - run: echo hello
